@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DeepSeek</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="app">
+        <!-- Sidebar -->
+        <div class="sidebar" id="sidebar">
+            <div class="sidebar-content">
+                <!-- Logo and New Chat -->
+                <div class="sidebar-header">
+                    <div class="logo">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                            <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                            <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                        </svg>
+                        <span>DeepSeek</span>
+                    </div>
+                    <button class="new-chat-btn" id="newChatBtn">
+                        <i class="fas fa-plus"></i>
+                        New chat
+                    </button>
+                </div>
+
+                <!-- Chat History -->
+                <div class="chat-history">
+                    <div class="history-section">
+                        <div class="history-label">Today</div>
+                        <div class="chat-item active">
+                            <i class="fas fa-message"></i>
+                            <span>What is quantum computing?</span>
+                            <div class="chat-actions">
+                                <button class="action-btn"><i class="fas fa-pen"></i></button>
+                                <button class="action-btn"><i class="fas fa-trash"></i></button>
+                            </div>
+                        </div>
+                        <div class="chat-item">
+                            <i class="fas fa-message"></i>
+                            <span>Python programming help</span>
+                            <div class="chat-actions">
+                                <button class="action-btn"><i class="fas fa-pen"></i></button>
+                                <button class="action-btn"><i class="fas fa-trash"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="history-section">
+                        <div class="history-label">Yesterday</div>
+                        <div class="chat-item">
+                            <i class="fas fa-message"></i>
+                            <span>Explain machine learning</span>
+                            <div class="chat-actions">
+                                <button class="action-btn"><i class="fas fa-pen"></i></button>
+                                <button class="action-btn"><i class="fas fa-trash"></i></button>
+                            </div>
+                        </div>
+                        <div class="chat-item">
+                            <i class="fas fa-message"></i>
+                            <span>Code review assistance</span>
+                            <div class="chat-actions">
+                                <button class="action-btn"><i class="fas fa-pen"></i></button>
+                                <button class="action-btn"><i class="fas fa-trash"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sidebar Footer -->
+                <div class="sidebar-footer">
+                    <div class="upgrade-card">
+                        <div class="upgrade-icon">⚡</div>
+                        <div class="upgrade-content">
+                            <div class="upgrade-title">Upgrade to Pro</div>
+                            <div class="upgrade-desc">Get unlimited access</div>
+                        </div>
+                        <button class="upgrade-btn">Upgrade</button>
+                    </div>
+                    
+                    <div class="user-menu">
+                        <div class="user-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="user-info">
+                            <div class="user-name">User</div>
+                            <div class="user-email">user@example.com</div>
+                        </div>
+                        <button class="menu-btn">
+                            <i class="fas fa-ellipsis-h"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Header -->
+            <div class="header">
+                <button class="sidebar-toggle" id="sidebarToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+                
+                <div class="model-info">
+                    <div class="model-name">DeepSeek-V3</div>
+                    <div class="model-status">
+                        <span class="status-dot"></span>
+                        Online
+                    </div>
+                </div>
+
+                <div class="header-actions">
+                    <button class="header-btn">
+                        <i class="fas fa-share-alt"></i>
+                    </button>
+                    <button class="header-btn">
+                        <i class="fas fa-cog"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Chat Area -->
+            <div class="chat-area" id="chatArea">
+                <!-- Welcome Screen -->
+                <div class="welcome-container" id="welcomeContainer">
+                    <div class="welcome-content">
+                        <div class="welcome-logo">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none">
+                                <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                                <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                                <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <h1>How can I help you today?</h1>
+                        
+                        <div class="example-prompts">
+                            <div class="prompt-card" data-prompt="Explain quantum computing in simple terms">
+                                <div class="prompt-icon">🔬</div>
+                                <div class="prompt-text">
+                                    <div class="prompt-title">Explain a concept</div>
+                                    <div class="prompt-desc">Quantum computing in simple terms</div>
+                                </div>
+                            </div>
+                            
+                            <div class="prompt-card" data-prompt="Write a Python function to calculate fibonacci numbers">
+                                <div class="prompt-icon">💻</div>
+                                <div class="prompt-text">
+                                    <div class="prompt-title">Write code</div>
+                                    <div class="prompt-desc">Python function for fibonacci</div>
+                                </div>
+                            </div>
+                            
+                            <div class="prompt-card" data-prompt="Help me plan a trip to Japan">
+                                <div class="prompt-icon">✈️</div>
+                                <div class="prompt-text">
+                                    <div class="prompt-title">Plan something</div>
+                                    <div class="prompt-desc">Trip to Japan</div>
+                                </div>
+                            </div>
+                            
+                            <div class="prompt-card" data-prompt="Analyze this data and provide insights">
+                                <div class="prompt-icon">📊</div>
+                                <div class="prompt-text">
+                                    <div class="prompt-title">Analyze data</div>
+                                    <div class="prompt-desc">Get insights from data</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Messages Container -->
+                <div class="messages-container" id="messagesContainer">
+                    <!-- Messages will be added here -->
+                </div>
+            </div>
+
+            <!-- Input Area -->
+            <div class="input-container">
+                <div class="input-wrapper">
+                    <div class="input-box">
+                        <textarea 
+                            id="messageInput" 
+                            placeholder="Message DeepSeek..."
+                            rows="1"
+                        ></textarea>
+                        <div class="input-actions">
+                            <button class="attach-btn" title="Attach file">
+                                <i class="fas fa-paperclip"></i>
+                            </button>
+                            <button class="send-btn" id="sendBtn" disabled>
+                                <i class="fas fa-arrow-up"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="input-footer">
+                    <p>DeepSeek can make mistakes. Consider checking important information.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
